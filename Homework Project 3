@@ -1,0 +1,102 @@
+#include <iostream>
+#include <iomanip>
+using namespace std; 
+
+int main ()
+{ 
+	int user_menu_choice; // to hold a menu choice
+	int seconds; // to hold seconds in numerics
+ 
+	float AIR_SECONDS = 1100;
+	float WATER_SECONDS = 4900;
+	float STEEL_SECONDS = 16400;
+	
+	const int AIR_OPTION = 1,
+			  WATER_OPTION = 2,
+			  STEEL_OPTION = 3,
+			  MINIMUM_DISTANCE = 0;
+	
+	float length_of_travel; // distance
+	int amount_of_time;  // seconds
+	
+	cout << "Select a medium:\n"
+		 << "1. Air\n"
+		 << "2. Water\n"
+		 << "3. Steel\n"<< endl;
+	cout << "Enter your choice: ";
+	cin >> user_menu_choice;
+
+	
+	cout << fixed << showpoint << setprecision(4); 
+	 
+
+        
+	    if(user_menu_choice < 1 || user_menu_choice > 3)
+            {
+				
+                cout << "\nThe valid choices are 1 through 3.";
+                cout << " Run the\n" <<"program again and select one of those.\n";
+            }
+   
+    else 
+            {
+                //valid 
+            
+
+		if (user_menu_choice == 1) //option 1
+                {
+                    cout << "Enter the distance: "; 
+                    cin >> length_of_travel;
+					cout << endl;
+	
+	    if (length_of_travel <= MINIMUM_DISTANCE)
+                {
+                    cout << "Distance must be greater than zero.\n";
+					cout << endl;
+					return 1;
+                } 
+                    amount_of_time = length_of_travel / 
+                                     AIR_SECONDS;
+                    cout << "A sound wave takes " << length_of_travel/AIR_SECONDS << " seconds to travel " << length_of_travel << " feet through air.";
+                }
+	else if (user_menu_choice == 2) //option 2
+	            {
+	                 cout << "Enter the distance: "; 
+                     cin >> length_of_travel;
+					 cout << endl;
+	
+	    if (length_of_travel <= MINIMUM_DISTANCE)
+                {
+                    cout << "Distance must be greater than zero.\n";
+					cout << endl;
+					return 1;
+                } 
+	                amount_of_time = length_of_travel / 
+                                     WATER_SECONDS;
+                    cout << "A sound wave takes " << length_of_travel/WATER_SECONDS << " seconds to travel " << length_of_travel << " feet through water.";
+            	}
+	
+	else if (user_menu_choice == 3) //option 3
+	            {
+	                 cout << "Enter the distance: "; 
+                     cin >> length_of_travel;
+					 cout << endl;
+	
+	    if (length_of_travel <= MINIMUM_DISTANCE)
+                {
+                    cout << "Distance must be greater than zero.\n";
+					cout << endl;
+					return 1; 
+                } 
+	                amount_of_time = length_of_travel / 
+                                     STEEL_SECONDS;
+                    cout << "A sound wave takes " << length_of_travel/STEEL_SECONDS << " seconds to travel " << length_of_travel << " feet through steel."<< endl;
+                 
+	            }
+
+	            
+	           
+             }
+	
+    return 0;
+}
